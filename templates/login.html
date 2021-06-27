@@ -1,0 +1,59 @@
+{% include 'publicheader.html' %}
+
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <h2>Login</h2>
+                               <form method="post">
+								<table class="table " style="width : 400px;">
+									<tr>
+										<th style="color : #fff">username</th>
+									    <td style="color : #000"><input type="text" name="username" class="form-control"></td>
+									</tr>
+									<tr>
+										<th style="color : #fff">password</th>
+									    <td style="color : #000"><input type="password" name="password" class="form-control"></td>
+									</tr>
+									<tr>
+										<td colspan="2" align = "center"><input type="submit" name="login" value="login" class="btn btn-success"></td>
+									</tr>
+								</table>
+							</form><br><br>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                 <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </section>
+
+
+
+
+
+<!-- <form method="post">
+	<table align="center">
+		<tr>
+			<th>username</th>
+		    <td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+			<th>password</th>
+		    <td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align = "center"><input type="submit" name="login" value="login"></td>
+		</tr>
+	</table>
+</form><br><br> -->
+{% include 'footer.html' %}

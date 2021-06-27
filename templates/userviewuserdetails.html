@@ -1,0 +1,68 @@
+{% include 'userheader.html'%}
+<style>
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+
+
+.avatar:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+</style>
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                               <h1 style="color : #fff">View Users</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+    </section>
+    <br><br><br>
+<center>
+
+	<table class="table" align="center" style="width : 500px;">
+		
+		{% for row in data['users'] %}
+		<tr>
+            <td><img src="/{{ row['profileimage'] }}" alt="Avatar" class="avatar"></td>
+        </tr>
+        <tr>
+            <td>{{ row['names'] }}</td>
+        </tr>
+        <tr>
+			<td>{{ row['phone'] }}</td>
+        </tr>
+        <tr>
+
+			<td>{{ row['email'] }}</td>
+        </tr>
+        <tr>
+			<td>{{ row['place'] }}</td>
+        </tr>
+        <tr>
+			<td>{{ row['gender'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include'footer.html'%}

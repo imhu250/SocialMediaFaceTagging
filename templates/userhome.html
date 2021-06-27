@@ -1,0 +1,40 @@
+{% include 'userheader.html'%}
+
+
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <h1 style="color : #fff">Welcome To User Home</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                 <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+    </section>
+
+
+    <center>
+        <h1>My Post</h1>
+         <table class="table" align="center" style="width : 500px;">
+        {% for row in data['post'] %}
+        <br>
+        <tr>
+            <td align="center"><img src="/{{ row['path'] }}" style="width:150px;height:150px;"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+<br>
+<br>
+{% include'footer.html'%}

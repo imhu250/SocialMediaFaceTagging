@@ -1,0 +1,88 @@
+{% include 'publicheader.html' %}
+
+
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                               <h2 style="color : #fff">Registration</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                 <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+    </section>
+
+<br><br>
+
+<form method="post" enctype="multipart/form-data">
+	<table align="center" class="table" style="width: 600px;">
+	
+	<tr>
+	<th> first name </th>
+	<td> <input type="text" class="form-control" required="" pattern="[A-Za-z]{0,15}" required="" name="fname"></td>
+	</tr>
+	<tr>
+	<th> last name </th>
+	<td> <input type="text" class="form-control" required="" pattern="[A-Za-z]{0,15}" required="" name="lname"></td>
+	</tr>
+	<tr>
+	<th>place</th>
+	<td><input type="text" class="form-control"  required="" name="place"></td>
+	</tr>
+	<tr>
+	<th>gender</th>
+	<td><input type="radio" required="" name="gender" value="male"> &nbsp;&nbsp;male&nbsp;&nbsp; <input type="radio"  required="" name="gender" value="female">&nbsp;&nbsp;female</td>
+	</tr>
+		<tr>
+	<th>email</th>
+	    <td><input type="text" class="form-control" required="" name="email"></td>
+	</tr>
+	<tr>
+	<th>contact</th>
+	   <td><input type="text"  class="form-control" required="" pattern="[0-9]{10}" name="phone"></td>
+	</tr>
+	<tr>
+		<th>Profile Pic</th>
+		<td><input type="file" class="form-control" name="pimage" class="input" required="" class="form-control">
+	</tr>
+	<tr>
+		<td colspan="2">Upload images for training</td>
+	</tr>
+	<tr>
+		<th>Photo1:</th>
+		<td><input type="file" class="form-control" name="image1" class="input" required="" class="form-control">
+	</tr>
+	<tr>
+		<th>Photo2:</th>
+		<td><input type="file" class="form-control" name="image2" class="input" required="" class="form-control">
+	</tr>
+	<tr>
+		<th>Photo3:</th>
+		<td><input type="file" class="form-control" name="image3" class="input" required="" class="form-control">
+	</tr>
+	<tr>
+	<th>username</th>
+	    <td><input type="text" class="form-control" required="" name="username"></td>
+	</tr>
+	<tr>
+	<th>password</th>
+	       <td><input type="password" class="form-control" required="" name="password"></td>
+	</tr>
+	<tr>
+	<td colspan="2" align = "center"><input type="submit" name="submit" value="Register" class="btn btn-success"></td>
+	</tr>
+</table>
+</form>
+
+{% include 'footer.html' %}
