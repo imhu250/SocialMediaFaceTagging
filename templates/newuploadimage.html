@@ -1,0 +1,58 @@
+{% include 'userheader.html'%}
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <h2>Upload Image</h2>
+
+								<form method="post" enctype="multipart/form-data">
+								<center>
+								<table class="table" style="width : 500px;">
+									<tr>
+										<td><input type="file" name="newimage" class="form-control"></td>
+									</tr>
+									<tr>
+										<td align="center" colspan="2"><input type="submit" name="submit" value="Upload" class="btn btn-success"></td>
+									</tr>
+								</table>
+								</center>
+								</form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+    </section>
+    <center>
+
+<h2>Uploaded Images</h2>
+    <table class="table" style="width : 1200px;">
+        <tr>
+            <th>Image</th>
+            <th>Date</th>
+            
+        </tr>
+        {% for row in data['users'] %}
+        <tr>
+            <td><img src="/{{ row['path'] }}" style="width:150px;height:150px;"></td>
+            <td>{{ row['date'] }}</td>
+            <td><a class="btn btn-warning" href="userviewtaggedusers?imid={{ row['image_id'] }}">View Tagged Users</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+
+
+
+{% include'footer.html'%}

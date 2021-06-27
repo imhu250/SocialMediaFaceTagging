@@ -1,0 +1,51 @@
+{% include 'userheader.html'%}
+ <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                               ><h1 style="color : #fff"> User Requests</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                 <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+    </section>
+    <br><br>
+<center>
+
+	<table class="table" style="width : 1200px;">
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Place</th>
+			<th>Gender</th>
+		</tr>
+		{% for row in data['viewusersrequested'] %}
+		<tr>
+			<td>{{ row['names'] }}</td>
+			<td>{{ row['phone'] }}</td>
+			<td>{{ row['email'] }}</td>
+			<td>{{ row['place'] }}</td>
+			<td>{{ row['gender'] }}</td>
+			{% if row['status']=="NA" %}
+				<td><a class="btn btn-success" href="?action=accept&rid={{ row['request_id'] }}">Accept</td>
+				<td><a class="btn btn-danger" href="?action=reject&rid={{ row['request_id'] }}">Reject</td>
+			{% elif row['status']=="Accept" %}
+				<td><a class="btn btn-danger" href="?action=reject&rid={{ row['request_id'] }}">Reject</td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include'footer.html'%}

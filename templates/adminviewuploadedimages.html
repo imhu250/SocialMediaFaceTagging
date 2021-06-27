@@ -1,0 +1,51 @@
+{% include 'adminheader.html'%}
+<style>
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+</style>
+    <section class="hero-section">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="/static/img/hero/hero-1.jpg" style="height : 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                              <h1 style="color : #fff">View Uploaded Images</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero__img">
+                                 <img src="/static/img/s2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+    </section> 
+    <br><br><br>
+<center>
+
+	<table class="table" style="width : 1200px;">
+		<tr>
+			<th>User</th>
+			<th>Image</th>
+			<th>Date</th>
+			
+		</tr>
+		{% for row in data['users'] %}
+		<tr>
+			<td><img src="/{{ row['profileimage'] }}" alt="Avatar" class="avatar"><a href="userviewuserdetails?uid={{ row['user_id'] }}">{{ row['names'] }}</a></td>
+			<td><img src="/{{ row['path'] }}" style="width:150px;height:150px;"></td>
+			<td>{{ row['date'] }}</td>
+			<td><a class="btn btn-warning" href="viewtaggedusers?imid={{ row['image_id'] }}">View Tagged Users</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include'footer.html'%}
